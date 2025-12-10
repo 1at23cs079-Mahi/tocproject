@@ -4,7 +4,6 @@ import React, { useMemo } from 'react';
 import ReactFlow, {
   Node,
   Edge,
-  Controls,
   Background,
   BackgroundVariant,
   MarkerType,
@@ -31,7 +30,7 @@ const CategoryVisualization: React.FC<CategoryVisualizationProps> = ({
   const { nodes: dfaNodes, edges: dfaEdges } = generateDFAVisualization();
 
   // Get simulation and analysis results
-  const { visitedStates, tokenCount, errorCount, hasError } = useMemo(() => {
+  const { visitedStates, tokenCount, hasError } = useMemo(() => {
     const simulator = new DFASimulator(dfa);
     simulator.initialize(code);
 

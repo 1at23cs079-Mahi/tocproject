@@ -1,19 +1,18 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import CodeEditor from '@/components/CodeEditor';
 import TokenTable from '@/components/TokenTable';
 import ErrorPanel from '@/components/ErrorPanel';
 import DfaVisualizer from '@/components/DfaVisualizer';
-import StaticDfaVisualizations from '@/components/StaticDfaVisualizations';
-import ErrorVisualizations from '@/components/ErrorVisualization';
 import CategoryVisualizations from '@/components/CategoryVisualizations';
 import SyntaxHighlighter from '@/components/SyntaxHighlighter';
 import AdvancedDfaVisualizer from '@/components/AdvancedDfaVisualizer';
 import { analyzeCode } from '@/core/lexer/dfa';
 import { Token, LexicalError } from '@/core/types';
 import { SAMPLES } from '@/core/samples';
-import { Play, Code, FileText, AlertCircle, Activity, Zap } from 'lucide-react';
+import { Play, Code, FileText, AlertCircle, Activity, Zap, BookOpen, AlertTriangle } from 'lucide-react';
 
 export default function Home() {
   const [code, setCode] = useState<string>('');
@@ -52,6 +51,20 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-2">
+              <Link
+                href="/examples"
+                className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors flex items-center gap-2"
+              >
+                <BookOpen className="w-4 h-4" />
+                Examples
+              </Link>
+              <Link
+                href="/errors"
+                className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors flex items-center gap-2"
+              >
+                <AlertTriangle className="w-4 h-4" />
+                Error Cases
+              </Link>
               {SAMPLES.map((sample) => (
                 <button
                   key={sample.name}
@@ -88,14 +101,30 @@ export default function Home() {
 
       {/* Example DFA Visualizations */}
       <div className="max-w-[1800px] mx-auto px-6 py-6">
-        <h2 className="text-lg font-bold text-gray-800 mb-4">DFA Execution Examples</h2>
-        <StaticDfaVisualizations className="h-80" />
-      </div>
-
-      {/* Error Visualizations */}
-      <div className="max-w-[1800px] mx-auto px-6 py-6">
-        <h2 className="text-lg font-bold text-gray-800 mb-4">Error Detection Examples</h2>
-        <ErrorVisualizations className="h-80" />
+        <h2 className="text-lg font-bold text-gray-800 mb-4">Quick Start Guide</h2>
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+          <p className="text-gray-700 mb-4">
+            Click the buttons above to explore DFA execution examples and error cases, or enter your own code to analyze.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Link
+              href="/examples"
+              className="block p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors"
+            >
+              <BookOpen className="w-6 h-6 text-blue-600 mb-2" />
+              <h3 className="font-semibold text-blue-900">DFA Examples</h3>
+              <p className="text-sm text-blue-700">See how DFA tokenizes different code patterns</p>
+            </Link>
+            <Link
+              href="/errors"
+              className="block p-4 bg-red-50 border border-red-200 rounded-lg hover:bg-red-100 transition-colors"
+            >
+              <AlertTriangle className="w-6 h-6 text-red-600 mb-2" />
+              <h3 className="font-semibold text-red-900">Error Cases</h3>
+              <p className="text-sm text-red-700">Learn about error detection and handling</p>
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Main Content */}

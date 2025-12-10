@@ -4,7 +4,6 @@ import React, { useMemo } from 'react';
 import ReactFlow, {
   Node,
   Edge,
-  Controls,
   Background,
   BackgroundVariant,
   MarkerType,
@@ -196,7 +195,7 @@ const ErrorVisualization: React.FC<ErrorVisualizationProps> = ({
         </code>
         {hasError && (
           <div className="mt-1 text-xs text-red-600">
-            ❌ Error at position {errorPosition}: invalid character '{errorChar}'
+            ❌ Error at position {errorPosition}: invalid character &apos;{errorChar}&apos;
           </div>
         )}
       </div>
