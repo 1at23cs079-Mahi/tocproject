@@ -7,6 +7,7 @@ import ErrorPanel from '@/components/ErrorPanel';
 import DfaVisualizer from '@/components/DfaVisualizer';
 import StaticDfaVisualizations from '@/components/StaticDfaVisualizations';
 import ErrorVisualizations from '@/components/ErrorVisualization';
+import CategoryVisualizations from '@/components/CategoryVisualizations';
 import SyntaxHighlighter from '@/components/SyntaxHighlighter';
 import AdvancedDfaVisualizer from '@/components/AdvancedDfaVisualizer';
 import { analyzeCode } from '@/core/lexer/dfa';
@@ -224,6 +225,13 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Category Visualizations - Show after analyze */}
+      {hasAnalyzed && (
+        <div className="max-w-[1800px] mx-auto px-6 py-8">
+          <CategoryVisualizations />
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="max-w-[1800px] mx-auto px-6 py-8 mt-12">
