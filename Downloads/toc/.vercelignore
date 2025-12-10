@@ -1,0 +1,11 @@
+.git
+.gitignore
+node_modules
+npm-debug.log
+.env.local
+.next/cache
+*.pdf
+*.mp4
+*.jpg
+*.png
+*.zip
