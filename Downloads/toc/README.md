@@ -7,6 +7,10 @@ A modern, full-stack web application for lexical analysis using **Deterministic 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+## 🌐 Live Demo
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F1at23cs079-Mahi%2Ftocproject&project-name=lexical-analyzer-dfa&repository-name=tocproject)
+
 ## 🎯 Overview
 
 This lexical analyzer (lexer) breaks source code into **tokens** using a DFA-based approach. It provides:
@@ -52,6 +56,37 @@ This lexical analyzer (lexer) breaks source code into **tokens** using a DFA-bas
 npm run build
 npm start
 ```
+
+## 🌍 Vercel Deployment
+
+### One-Click Deploy
+
+Click the button below to deploy directly to Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F1at23cs079-Mahi%2Ftocproject&project-name=lexical-analyzer-dfa&repository-name=tocproject)
+
+### Manual Deployment via Vercel CLI
+
+1. **Install Vercel CLI**:
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Deploy from project directory**:
+   ```bash
+   vercel
+   ```
+
+3. **Follow the prompts** to configure your deployment
+
+### GitHub Integration
+
+Connect your GitHub repository to Vercel for automatic deployments:
+1. Go to [Vercel Dashboard](https://vercel.com/dashboard)
+2. Click "New Project"
+3. Select your GitHub repository
+4. Vercel will automatically detect Next.js configuration
+5. Click "Deploy"
 
 ## 📋 Available Scripts
 
